@@ -12,14 +12,17 @@
          * Date: 1/12/2016
          * Time: 4:09 PM
          */
-        $name = 'Alvin';
 
-        $what = 'geek';
+        require_once('Game.php');
 
-        $level = 10;
+        if(!isset($_GET['board'])){
+            $position = '---------';
+        } else {
+            $position = $_GET['board'];
+        }
 
-        echo 'Hi, my name is '.$name,'. and I am a level '.$level.'
-        '.$what;
+        $game = new Game($position);
+
         ?>
 </body>
 </html>
