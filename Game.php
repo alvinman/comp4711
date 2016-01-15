@@ -86,9 +86,9 @@ class Game
             return '<td>'.$token.'</td>';
         //hard case
         $this->newposition = $this->position; //copy original
-        $this->newposition[$which] = 'o'; //their move
+        $this->newposition[$which] = 'x'; //their move
         $move = implode($this->newposition); //make a string from the board array
-        $link = '/?board='.$move;
+        $link = '?board='.$move;
         return '<td><a href="'.$link.'">-</a></td>';
     }
 
