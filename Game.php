@@ -18,11 +18,11 @@ class Game
         if($this->winner('x')) {
             echo 'You win. Lucky guesses!';
         } else if ($this->winner('o')) {
-            echo 'I win.  Muhahahahahaha';
+            echo "<p> I win.  Muhahahahahaha </p>";
         } else {
             $this->pick_move();
             if($this->winner('o')){
-                echo 'I win.  Muhahahahahaha';
+                echo "<p> I win.  Muhahahahahaha </p>";
             }
         }
         $this->display();
@@ -68,7 +68,7 @@ class Game
 
     //Function to display the current gameboard
     function display(){
-        echo '<table cols="3" style="font-size:large; font-weight:bold">';
+        echo '<table id="table">';
         echo '<tr>'; // open the first row
         for ($pos = 0; $pos < 9; $pos++){
             echo $this->show_cell($pos);
