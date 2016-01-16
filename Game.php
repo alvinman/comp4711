@@ -16,7 +16,7 @@ class Game
         $this->position = str_split($squares);
 
         if($this->winner('x')) {
-            echo 'You win. Lucky guesses!';
+            echo "<p> You win. Lucky guesses! </p>";
         } else if ($this->winner('o')) {
             echo "<p> I win.  Muhahahahahaha </p>";
         } else {
@@ -88,8 +88,13 @@ class Game
         $this->newposition = $this->position; //copy original
         $this->newposition[$which] = 'x'; //their move
         $move = implode($this->newposition); //make a string from the board array
+
+        if($this->winner('o') || $this->winner('x')){
+            return '<td id="white">.</td>';
+        }
+
         $link = '?board='.$move;
-        return '<td><a href="'.$link.'">-</a></td>';
+        return '<td><a href="'.$link.'">.</a></td>';
     }
 
     //Automatically picks a move by selecting the next available cell
